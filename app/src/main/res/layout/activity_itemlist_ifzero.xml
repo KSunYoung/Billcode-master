@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ItemList_layout"
+    android:background="@color/white">
+    <TextView
+        android:paddingTop="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="아직 상품이 없습니다."
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="상품을 추가해 주세요."
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:layout_gravity="center"/>
+    <Button
+        android:id="@+id/list_zero_button"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="누르세요"/>
+
+    <ImageView
+        android:id="@+id/list_zero_img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"/>
+
+    <ImageView
+        android:layout_width="288dp"
+        android:layout_height="271dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/ic_refrigerator_gray" />
+</LinearLayout>

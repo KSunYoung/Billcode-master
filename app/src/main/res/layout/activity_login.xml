@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/LoginLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_gravity="center"
+                android:inputType="textEmailAddress"
+                android:id="@+id/UserId"
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_marginEnd="75dp"
+                android:layout_marginTop="50dp"
+                android:background="#00ffffff"
+                android:hint="아이디 또는 이메일"
+                android:textColorHint="@color/darkGray" />
+
+            <ImageView
+                android:layout_width="296dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/line_login" />
+
+            <EditText
+                android:inputType="textPassword"
+                android:id="@+id/UserPw"
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="115dp"
+                android:layout_marginTop="50dp"
+                android:background="#00ffffff"
+                android:hint="비밀번호"
+                android:textColorHint="@color/darkGray" />
+
+            <ImageView
+                android:layout_width="296dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/line_login" />
+
+            <Button
+                android:id="@+id/LoginBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="50dp"
+                android:background="#00ffffff"
+                android:text="로그인"
+                android:textColor="@color/darkGray"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_login_err"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="5dp"
+            android:text=" *학번과 일치하는 비밀번호가 아닙니다"
+            android:textColor="#fb3a2f"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <TextView
+            android:id="@+id/txt_login_err_noinput"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="5dp"
+            android:text=" *학번과 비밀번호를 모두 입력해주세요"
+            android:textColor="#fb3a2f"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/our_signup_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="130dp"
+            android:background="@drawable/btn_rounded_login"
+            android:text="BillCode 전용 회원가입"
+            android:shadowColor="@color/white"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/login_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="93dp"
+            android:layout_alignParentBottom="true"/>
+
+        <com.kakao.usermgmt.LoginButton
+            android:id="@+id/kakao_login_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="30dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>
