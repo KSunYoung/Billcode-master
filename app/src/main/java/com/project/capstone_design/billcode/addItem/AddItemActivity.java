@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+import com.project.capstone_design.billcode.ItemListFragment;
 import com.project.capstone_design.billcode.R;
 import com.project.capstone_design.billcode.ScanActivity;
 import com.project.capstone_design.billcode.itemList.ItemList;
@@ -99,10 +100,10 @@ public class AddItemActivity extends AppCompatActivity {
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent nextIntent = new Intent(AddItemActivity.this, ItemList.class);
+                //Intent nextIntent = new Intent(AddItemActivity.this, ItemList.class);
+                //startActivity(nextIntent);
                 //sqliteDB.insert()
                 Toast.makeText(getApplicationContext(), "성공적으로 전달되었습니다.", Toast.LENGTH_SHORT).show();
-
 
             }
         });

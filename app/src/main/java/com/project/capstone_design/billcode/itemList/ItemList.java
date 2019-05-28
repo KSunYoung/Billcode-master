@@ -1,5 +1,6 @@
 package com.project.capstone_design.billcode.itemList;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,10 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.project.capstone_design.billcode.DBHelper;
+import com.project.capstone_design.billcode.ItemListFragment;
 import com.project.capstone_design.billcode.MainActivity;
 import com.project.capstone_design.billcode.R;
+import com.project.capstone_design.billcode.addItem.AddItemActivity;
 import com.project.capstone_design.billcode.addItem.AddItem_RecyclerAdapter;
 import com.project.capstone_design.billcode.addItem.AddItem_RecyclerItem;
 import com.squareup.picasso.Picasso;
@@ -35,6 +39,8 @@ public class ItemList extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //setRecyclerView();
+        Toast.makeText(getApplicationContext(), "성공적으로 전달되었습니다.", Toast.LENGTH_SHORT).show();
     }
 
     public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -61,13 +67,15 @@ public class ItemList extends Fragment {
                         .build();
                 mPicasso.load("http://nick.mtvnimages.com/nick/promos-thumbs/videos/spongebob-squarepants/rainbow-meme-video/spongebob-rainbow-meme-video-16x9.jpg").centerCrop().fit().into(List_zero_img);
 
-                        //mPicasso.load("http://nick.mtvnimages.com/nick/promos-thumbs/videos/spongebob-squarepants/rainbow-meme-video/spongebob-rainbow-meme-video-16x9.jpg").centerCrop().fit().into(List_zero_img);
+                //mPicasso.load("http://nick.mtvnimages.com/nick/promos-thumbs/videos/spongebob-squarepants/rainbow-meme-video/spongebob-rainbow-meme-video-16x9.jpg").centerCrop().fit().into(List_zero_img);
             }
         });
         //return layout;
 
         return mView;
     }
+
+
 
     private void setRecyclerView() {
         // 각 Item 들이 RecyclerView 의 전체 크기를 변경하지 않는 다면
@@ -99,7 +107,6 @@ public class ItemList extends Fragment {
 // RecyclerView 에 들어갈 데이터를 추가합니다.
         for (String name : array) {
             mItems.add(new AddItem_RecyclerItem(name));
-            //mItems.add(new AddItem_RecyclerItem(name));
         }
 
         DBHelper dbHelper = new DBHelper(getApplicationContext(), "DB_TABLE.db", null, 1);
@@ -107,5 +114,8 @@ public class ItemList extends Fragment {
 
 // 데이터 추가가 완료되었으면 notifyDataSetChanged() 메서드를 호출해 데이터 변경 체크를 실행합니다.
         adapter.notifyDataSetChanged();
+        //Intent nextIntent = new Intent(ItemList.this, ItemListFragment.class);
+        //startActivity(nextIntent);
+        Toast.makeText(getApplicationContext(), "Insert완료.", Toast.LENGTH_SHORT).show();
     }
 }

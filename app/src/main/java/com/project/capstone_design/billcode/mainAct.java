@@ -91,7 +91,7 @@ public class mainAct extends Fragment {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(), "준비중 입니다.", Toast.LENGTH_SHORT).show();
-                //Intent intent = new Intent(getActivity(), IntroduceClub.class);
+                //Intent intent = new Intent(getActivity(), ItemListFragment.class);
                 //startActivity(intent);
             }
         });
@@ -100,8 +100,8 @@ public class mainAct extends Fragment {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(), "준비중 입니다.", Toast.LENGTH_SHORT).show();
-                //Intent intent = new Intent(getActivity(), IntroduceClub.class);
-                //startActivity(intent);
+                Intent intent = new Intent(getActivity(), Mart_Connect.class);
+                startActivity(intent);
             }
         });
 

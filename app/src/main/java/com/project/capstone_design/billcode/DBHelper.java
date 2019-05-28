@@ -31,8 +31,8 @@ public class DBHelper extends SQLiteOpenHelper {
         StringBuffer sb = new StringBuffer();
         sb.append(" CREATE TABLE DB_TABLE ( ");
         sb.append(" P_NUM INTEGER PRIMARY KEY, ");
-        sb.append(" P_NAME TEXT, ");
-        sb.append(" P_EXPDATE INTEGER ) ");
+        sb.append(" P_NAME STRING, ");
+        sb.append(" P_EXPDATE STRING ) ");
 
         // SQLite Database로 쿼리 실행
         db.execSQL(sb.toString());
@@ -91,14 +91,14 @@ public class DBHelper extends SQLiteOpenHelper {
         return list;
     }
 
-    public void update(int P_NUM, String P_NAME, String P_BLOB, int P_EXPDATE) {
+    public void update(int P_NUM, String P_NAME, String P_EXPDATE) {
         SQLiteDatabase db = getWritableDatabase();
         // 입력한 항목과 일치하는 행의 이름 정보 수정
         db.execSQL("UPDATE DB_TABLE SET P_NAME=" + P_NAME + " WHERE P_NUM='" + P_NUM + "';");
         db.close();
     }
 
-    public void delete(int P_NUM, String P_NAME, String P_BLOB, int P_EXPDATE) {
+    public void delete(int P_NUM, String P_NAME, int P_EXPDATE) {
         SQLiteDatabase db = getWritableDatabase();
         // 입력한 항목과 일치하는 행 삭제
         db.execSQL("DELETE FROM DB_TABLE WHERE P_NUM='" + P_NUM + "';");
@@ -114,9 +114,9 @@ public class DBHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("SELECT * FROM DB_TABLE", null);
         while (cursor.moveToNext()) {
             result +=  "상품번호 : "
-                    + cursor.getString(0)
+                    + cursor.getInt(0)
                     + "상품이름 : "
-                    + cursor.getInt(1)
+                    + cursor.getString(1)
                     + "유통기한 : "
                     + cursor.getString(2)
                     + "\n";

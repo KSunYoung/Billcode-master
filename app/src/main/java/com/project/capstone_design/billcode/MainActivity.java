@@ -89,12 +89,12 @@ public class MainActivity extends AppCompatActivity
             // Handle the camera action
             //Toast.makeText(this, "홈은 준비중입니다.", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_lists) {
-            //Intent intent = new Intent(MainActivity.this, ItemListActivity.class);
+            //Intent intent = new Intent(MainActivity.this, ItemListFragment.class);
             //startActivity(intent);
-
             mFragment = new ItemList();
-            //Toast.makeText(this, "상품목록은 준비중입니다.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "상품목록은 준비중입니다.", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_buy) {
+            mFragment=new Mart_Connect();
             Toast.makeText(this, "재구매는 준비중입니다.", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_tools) {
             Intent intent = new Intent(MainActivity.this, Activity_Setting.class);
